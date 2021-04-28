@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TodoScreen: View {
-    @ObservedObject var todoStore = TodoStore()
+    @ObservedObject var todoStore = StoreManager.instance.todoStore
     @State private var nextTodo = Todo()
     var body: some View {
         NavigationView {

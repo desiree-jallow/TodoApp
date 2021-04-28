@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selection  = 0
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView(selection: $selection,
+                content:  {
+                    TodoScreen().tabItem { Text("Todos") }.tag(1)
+                   CondensedScreen().tabItem { Text("Condensed") }.tag(2)
+                })
     }
 }
 
